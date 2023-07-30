@@ -40,6 +40,7 @@ export default () => (async () => {
 	let messages: string[];
 	try {
 		messages = await generateCommitMessage(
+			config.AZURE_OPENAI_ENDPOINT,
 			config.AZURE_OPENAI_KEY,
 			config.model,
 			config.locale,
