@@ -4,6 +4,8 @@
 - config `AZURE_OPENAI_KEY` and `AZURE_OPENAI_ENDPOINT` are required
 - others may same or not
 
+---
+
 <div align="center">
   <div>
     <img src=".github/screenshot.png" alt="AI Commits"/>
