@@ -2,7 +2,7 @@
 
 - npm package name changed to `azure-aicommits`
 - config `AZURE_OPENAI_KEY` and `AZURE_OPENAI_ENDPOINT` are required
-- same with others
+- others may same or not
 
 <div align="center">
   <div>
@@ -133,13 +133,13 @@ aicommits config get <key>
 
 For example, to retrieve the API key, you can use:
 ```sh
-aicommits config getAZURE_OPENAI_KEY
+aicommits config get AZURE_OPENAI_KEY
 ```
 
 You can also retrieve multiple configuration options at once by separating them with spaces:
 
 ```sh
-aicommits config getAZURE_OPENAI_KEY generate
+aicommits config get AZURE_OPENAI_KEY generate
 ```
 
 ### Setting a configuration value
@@ -163,7 +163,7 @@ aicommits config set AZURE_OPENAI_KEY=<your-api-key> generate=3 locale=en
 ```
 
 ### Options
-####AZURE_OPENAI_KEY
+#### AZURE_OPENAI_KEY
 
 Required
 
