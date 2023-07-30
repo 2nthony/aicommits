@@ -40,26 +40,26 @@ export default () => (async () => {
 	let messages: string[];
 	try {
 		messages = await generateCommitMessage(
-			config.OPENAI_KEY,
+			config.AZURE_OPENAI_KEY,
 			config.model,
 			config.locale,
-			staged!.diff,
-			config.generate,
-			config['max-length'],
-			config.type,
-			config.timeout,
-			config.proxy,
+      staged!.diff,
+      config.generate,
+      config['max-length'],
+      config.type,
+      config.timeout,
+      config.proxy,
 		);
 	} finally {
 		s.stop('Changes analyzed');
 	}
 
 	/**
-	 * When `--no-edit` is passed in, the base commit message is empty,
-	 * and even when you use pass in comments via #, they are ignored.
-	 *
-	 * Note: `--no-edit` cannot be detected in argvs so this is the only way to check
-	 */
+   * When `--no-edit` is passed in, the base commit message is empty,
+   * and even when you use pass in comments via #, they are ignored.
+   *
+   * Note: `--no-edit` cannot be detected in argvs so this is the only way to check
+   */
 	const baseMessage = await fs.readFile(messageFilePath, 'utf8');
 	const supportsComments = baseMessage !== '';
 	const hasMultipleMessages = messages.length > 1;

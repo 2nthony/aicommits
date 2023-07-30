@@ -32,11 +32,9 @@
 	"lint-staged": {
 		"*.ts": "eslint --cache"
 	},
-	"dependencies": {
-		"@dqbd/tiktoken": "^1.0.2"
-	},
 	"devDependencies": {
 		"@clack/prompts": "^0.6.1",
+		"@dqbd/tiktoken": "^1.0.2",
 		"@pvtnbr/eslint-config": "^0.33.0",
 		"@types/ini": "^1.3.31",
 		"@types/inquirer": "^9.0.3",
@@ -51,8 +49,8 @@
 		"kolorist": "^1.7.0",
 		"lint-staged": "^13.1.2",
 		"manten": "^0.7.0",
-		"openai": "^3.2.1",
 		"pkgroll": "^1.9.0",
+		"redaxios": "^0.5.1",
 		"simple-git-hooks": "^2.8.1",
 		"tsx": "^3.12.3",
 		"typescript": "^4.9.5"

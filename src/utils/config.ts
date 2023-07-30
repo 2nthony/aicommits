@@ -24,13 +24,18 @@ const parseAssert = (
 };
 
 const configParsers = {
-	OPENAI_KEY(key?: string) {
-		if (!key) {
-			throw new KnownError('Please set your OpenAI API key via `aicommits config set OPENAI_KEY=<your token>`');
+	AZURE_OPENAI_ENDPOINT(endpoint?: string) {
+		if (!endpoint) {
+			throw new KnownError('Please set your Azure OpenAI endpoint via `aicommits config set AZURE_OPENAI_ENDPOINT=<endpoint>`');
 		}
-		parseAssert('OPENAI_KEY', key.startsWith('sk-'), 'Must start with "sk-"');
-		// Key can range from 43~51 characters. There's no spec to assert this.
-
+		parseAssert('AZURE_OPENAI_ENDPOINT', endpoint, 'Must have a valid Azure OpenAI API endpoint');
+		return endpoint;
+	},
+	AZURE_OPENAI_KEY(key?: string) {
+		if (!key) {
+			throw new KnownError('Please set your Azure OpenAI API key via `aicommits config set AZURE_OPENAI_KEY=<your token>`');
+		}
+		parseAssert('AZURE_OPENAI_KEY', key, 'Must have a valid Azure OpenAI API key');
 		return key;
 	},
 	locale(locale?: string) {
@@ -109,11 +114,11 @@ const configParsers = {
 type ConfigKeys = keyof typeof configParsers;
 
 type RawConfig = {
-	[key in ConfigKeys]?: string;
+  [key in ConfigKeys]?: string;
 };
 
 export type ValidConfig = {
-	[Key in ConfigKeys]: ReturnType<typeof configParsers[Key]>;
+  [Key in ConfigKeys]: ReturnType<typeof configParsers[Key]>;
 };
 
 const configPath = path.join(os.homedir(), '.aicommits');

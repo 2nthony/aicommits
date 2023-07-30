@@ -5,11 +5,11 @@ import {
 import type { ValidConfig } from '../../../src/utils/config.js';
 import { getDiff } from '../../utils.js';
 
-const { OPENAI_KEY } = process.env;
+const { AZURE_OPENAI_KEY, AZURE_OPENAI_ENDPOINT } = process.env;
 
 export default testSuite(({ describe }) => {
-	if (!OPENAI_KEY) {
-		console.warn('⚠️  process.env.OPENAI_KEY is necessary to run these tests. Skipping...');
+	if (!AZURE_OPENAI_KEY) {
+		console.warn('⚠️  process.env.AZURE_OPENAI_KEY is necessary to run these tests. Skipping...');
 		return;
 	}
 
@@ -137,7 +137,7 @@ export default testSuite(({ describe }) => {
 				'max-length': 50,
 				...configOverrides,
 			} as ValidConfig;
-			const commitMessages = await generateCommitMessage(OPENAI_KEY!, 'gpt-3.5-turbo', config.locale, gitDiff, config.generate, config['max-length'], config.type, 7000);
+			const commitMessages = await generateCommitMessage(AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_KEY!, 'gpt-3.5-turbo', config.locale, gitDiff, config.generate, config['max-length'], config.type, 7000);
 
 			return commitMessages[0];
 		}

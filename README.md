@@ -27,7 +27,7 @@
 3. Set the key so aicommits can use it:
 
     ```sh
-    aicommits config set OPENAI_KEY=<your token>
+    aicommits config set AZURE_OPENAI_KEY=<your token>
     ```
 
     This will create a `.aicommits` file in your home directory.
@@ -127,13 +127,13 @@ aicommits config get <key>
 
 For example, to retrieve the API key, you can use:
 ```sh
-aicommits config get OPENAI_KEY
+aicommits config getAZURE_OPENAI_KEY
 ```
 
 You can also retrieve multiple configuration options at once by separating them with spaces:
 
 ```sh
-aicommits config get OPENAI_KEY generate
+aicommits config getAZURE_OPENAI_KEY generate
 ```
 
 ### Setting a configuration value
@@ -147,17 +147,17 @@ aicommits config set <key>=<value>
 For example, to set the API key, you can use:
 
 ```sh
-aicommits config set OPENAI_KEY=<your-api-key>
+aicommits config set AZURE_OPENAI_KEY=<your-api-key>
 ```
 
 You can also set multiple configuration options at once by separating them with spaces, like
 
 ```sh
-aicommits config set OPENAI_KEY=<your-api-key> generate=3 locale=en
+aicommits config set AZURE_OPENAI_KEY=<your-api-key> generate=3 locale=en
 ```
 
 ### Options
-#### OPENAI_KEY
+####AZURE_OPENAI_KEY
 
 Required
 
