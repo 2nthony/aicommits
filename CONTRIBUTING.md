@@ -42,14 +42,14 @@ node ./dist/cli.mjs
 
 ## Testing
 
-Testing requires passing in `OPENAI_KEY` as an environment variable:
+Testing requires passing in `AZURE_OPENAI_KEY` as an environment variable:
 
 ```sh
-OPENAI_KEY=<your OPENAI key> pnpm test
+AZURE_OPENAI_KEY=<your AZUREOPENAI key> pnpm test
 ```
 
 
-You can still run tests that don't require `OPENAI_KEY` but will not test the main functionality:
+You can still run tests that don't require `AZURE_OPENAI_KEY` but will not test the main functionality:
 ```
 pnpm test
 ```
