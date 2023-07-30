@@ -1,3 +1,9 @@
+## In this fork only support of Azure OpenAI
+
+- npm package name changed to `azure-aicommits`
+- config `AZURE_OPENAI_KEY` and `AZURE_OPENAI_ENDPOINT` are required
+- same with others
+
 <div align="center">
   <div>
     <img src=".github/screenshot.png" alt="AI Commits"/>
